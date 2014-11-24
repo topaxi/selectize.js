@@ -464,7 +464,7 @@
 	var domToString = function(d) {
 		var tmp = document.createElement('div');
 	
-		tmp.appendChild(d.cloneNode());
+		tmp.appendChild(d.cloneNode(true));
 	
 		return tmp.innerHTML;
 	};
@@ -1501,7 +1501,7 @@
 			html = document.createDocumentFragment();
 			for (i = 0, n = groups_order.length; i < n; i++) {
 				optgroup = groups_order[i];
-				if (self.optgroups.hasOwnProperty(optgroup) && groups[optgroup].children.length) {
+				if (self.optgroups.hasOwnProperty(optgroup) && groups[optgroup].childNodes.length) {
 					// render the optgroup header and options within it,
 					// then pass it to the wrapper template
 					html_children = document.createDocumentFragment();
